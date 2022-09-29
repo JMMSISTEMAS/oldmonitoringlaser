@@ -1,0 +1,25 @@
+#resultados{
+    overflow-x: auto; 
+}
+
+table{
+    border: solid black 1px;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top: 3rem;
+    max-width: 100%;
+}
+
+thead{
+    background-color: #e30613;
+    color: white;
+}
+
+th,td{
+    border: solid black 1px;
+    padding: 1rem;
+}
+
+tr:nth-child(even){
+    background-color: #ffcccb;
+}

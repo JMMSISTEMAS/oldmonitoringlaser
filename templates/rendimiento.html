@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+	<!-- scripts y estilos externos -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src=" https://printjs-4de6.kxcdn.com/print.min.js"></script>
+	<link rel="stylesheet" href="https://printjs-4de6.kxcdn.com/print.min.css">
+	
+	<!-- scripts  y estilos propios -->
+	<script src="scripts/fns.js"></script>
+	<script src="scripts/example_data.js"></script>
+	<script src="scripts/bdates.js"></script>
+	<script src="scripts/btables.js"></script>
+	<script src="scripts/tabla_rendimiento.js"></script>
+	<script src="scripts/rendimiento.js" defer></script>
+	<link rel="stylesheet" href="styles/styles.css">
+	<link rel="stylesheet" href="styles/tabla_rendimiento.css">
+	<link rel="stylesheet" href="styles/rendimiento.css">
+	<title>Rendimiento</title>
+</head>
+<body data-usuario="{{usuario|json_encode()}}">
+    <nav id="nav_rendimiento" class="navbar navbar-light bg-light">
+		<a class="navbar-brand" href="#"><img src="assets/img/logo-header.svg" alt=""></a>
+		<div id="nav_right">
+			<span>
+				<i class="fa-solid fa-user"></i>
+				<span>{{usuario.nombre}}</span>
+			</span>
+			<button onclick="print_pdf()" class="btn btn-sm btn-dark">Descargar PDF <i class="fa-solid fa-file-pdf"></i></button>
+			<a href="server/services/logout.php"><button class="btn btn-sm btn-dark">Cerrar sesión <i class="fa-solid fa-right-from-bracket"></i></button></a>
+		
+			{% if usuario.is_root == true %}
+				<a href="admin/gestionar_bd.php"><button class="btn btn-sm btn-dark">Panel admin <i class="fa-solid fa-database"></i></button></a>
+			{% endif %}
+		</div>
+	</nav>
+
+	<main class="fluid-container" onload="init_data()">
+		<section class="container">
+			<form id="filtro" class="row" onsubmit="return false">
+				<div class="col-12" action="">
+					<div class="row g-3">
+						<div class="col-md-3">
+							<label for="" class="form-label">Zona:</label>
+							<select id="input_zona" name="input_zona" class="form-control" onchange="ev_change_zona()">
+								{% for permiso in permisos %}
+									<option value="{{permiso.zona_id}}">{{ permiso.zona_nombre }}</option>
+								{% endfor %}
+							</select>
+						</div>
+
+						<div class="col-md-3">
+							<label for="" class="form-label">Grupo:</label>
+							<select id="input_grupo" name="input_grupo" class="form-control" onchange="">
+								{% for grupo in grupos %}
+									<option value="{{grupo.grupo_id}}">{{ grupo.nombre }}</option>
+								{% endfor %}
+							</select>
+						</div>
+	
+						<div class="col-md-3">
+							<label class="form-label" for="start">Inicio:</label>
+							<input type="date" id="input_start_date" name="input_start_date" class="form-control"
+								value="2022-08-01"
+								min="2012-01-01">
+						</div>
+						<div class="col-md-3">
+							<label class="form-label" for="start">Final:</label>
+							<input type="date" id="input_end_date" name="input_end_date" class="form-control"
+								min="2012-01-01" value="2022-08-31">
+						</div>
+					</div>
+					<div class="row justify-content-center mt-4">
+						<button class="col-md-2 btn btn-success" onclick="click_filter()">Filtrar</button>
+					</div>			
+				</div>
+			</form>
+		</section>		
+		<section id="resultados">
+			<div id="cabecera_datos">
+			</div>
+			<table id="tabla_resultados">
+			
+			</table>
+
+			<table id="resumen_datos">
+
+			</table>
+		</section>
+	</main>
+	
+</body>
+</html>

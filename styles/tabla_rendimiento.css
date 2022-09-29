@@ -1,0 +1,156 @@
+#resultados{
+    overflow-x: auto; 
+}
+
+#cabecera_datos{
+    padding: 0px 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 3rem;
+    font-weight: bold;
+}
+
+#cabecera_datos>div:first-child{
+    font-size: 1.2rem;
+}
+
+#cabecera_datos>div:nth-child(2)>ul{
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#cabecera_datos>div:last-child{
+    font-size: 1.2rem;
+    color: var(--color-rojo-lasergran);
+}
+
+table{
+    border: solid black 1px;
+    border-collapse: collapse;
+}
+
+#tabla_resultados{
+    
+    margin: auto;
+    margin-top: 1rem;
+    table-layout: fixed;
+    width: 1920px;
+    max-width: 100%;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact; 
+}
+
+#tabla_resultados thead{
+    background-color: var(--color-rojo-lasergran);
+    color: white;
+}
+
+#tabla_resultados th, #tabla_resultados td{
+    border: solid black 1px;
+    padding: 1rem;
+    width: 50px;
+    word-wrap:break-word;
+    padding: 0.25rem 0.01rem;
+    text-align: center;
+}
+
+#tabla_resultados th{
+    font-size: 0.6rem;
+}
+
+#tabla_resultados th:nth-child(1), th:nth-child(2){
+    background-color: var(--color-rojo-lasergran) !important;    
+}
+
+#tabla_resultados th:last-child{
+    background-color: var(--color-rojo-lasergran) !important;   
+}
+
+#tabla_resultados th.odd{
+    background-color:  tomato ;    
+}
+
+#tabla_resultados th.even{
+    background-color: var(--color-rojo-lasergran); ;    
+}
+
+#tabla_resultados td{
+    font-size: 0.8rem;
+}
+
+#tabla_resultados td:first-child{
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+#tabla_resultados tr:nth-child(even){
+    background-color: #f8f8f8;
+}
+
+#tabla_resultados .table_header_first_word{
+    font-size: 1rem;
+}
+
+#tabla_resultados .turno_celda{
+    padding: 0px;
+}
+
+#tabla_resultados .turno_celda>div:first-child{
+    border-bottom: 1px solid black;
+}
+
+#tabla_resultados .turno_celda>div:last-child{
+    border-top: 1px solid black;
+}
+
+#tabla_resultados .turno_seleccionado{
+    background-color: lightsalmon;
+}
+
+#tabla_resultados tr.summary_row{
+    background-color: lightgray;
+    font-weight: bold;
+}
+
+#tabla_resultados tr.summary_row td{
+    padding: 1rem 0.01rem;
+}
+
+#resumen_datos{
+    border: solid black 0px;
+    font-size: 0.9rem;
+    margin: auto;   
+    margin-top: 2rem;
+}
+
+#resumen_datos td{
+    border: solid black 1px;
+    padding: 0.5rem 0.25rem;
+}
+
+#resumen_datos td:nth-child(1){
+    padding: 0.5rem 0.1rem 0.5rem 1rem;
+    text-align: right;
+}
+
+#resumen_datos td:nth-child(1),
+#resumen_datos td:nth-child(5),
+#resumen_datos td:nth-child(7){
+    background-color: var(--color-rojo-lasergran);;
+    color: white;
+}
+
+.bolder{
+    font-weight: bolder;
+}
+
+.bigger{
+    font-size: larger;
+}

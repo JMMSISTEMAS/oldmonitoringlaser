@@ -1,0 +1,129 @@
+@media print{
+    @page{
+        margin: 1110px;
+        size: 297mm 420mm;
+    }
+
+    #cabecera_datos{
+        padding: 0px 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 3rem;
+        font-weight: bold;
+    }
+    
+    #cabecera_datos>div:first-child{
+        font-size: 1.2rem;
+    }
+    
+    #cabecera_datos>div:nth-child(2)>ul{
+        padding: 0px;
+        margin: 0px;
+        list-style-type: none;
+        font-size: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    #cabecera_datos>div:last-child{
+        font-size: 1.2rem;
+        color: #e30613;
+    }
+    
+    
+    table{
+        border: solid black 1px;
+        border-collapse: collapse;
+        margin: auto;
+        margin-top: 1rem;
+        table-layout: fixed;
+        width: 1920px;
+        max-width: 100%;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact; 
+    }
+    
+    thead{
+        background-color: #e30613;
+        color: white;
+    }
+    
+    th,td{
+        border: solid black 1px;
+        padding: 1rem;
+        width: 50px;
+        word-wrap:break-word;
+        padding: 0.25rem 0.01rem;
+        text-align: center;
+    }
+    
+    th{
+        font-size: 0.6rem;
+    }
+    
+    th:nth-child(1), th:nth-child(2){
+        background-color: #e30613 !important;    
+    }
+    
+    th:last-child{
+        background-color: #e30613 !important;    
+    }
+    
+    th.odd{
+        background-color:  tomato ;    
+    }
+    
+    th.even{
+        background-color: #e30613 ;    
+    }
+    
+    td{
+        font-size: 0.8rem;
+    }
+    
+    td:first-child{
+        font-weight: bold;
+        background-color: lightgray;
+    }
+    
+    tr:nth-child(even){
+        background-color: #f8f8f8;
+    }
+    
+    .table_header_first_word{
+        font-size: 1rem;
+    }
+    
+    .turno_celda{
+        padding: 0px;
+    }
+    
+    .turno_celda>div:first-child{
+        border-bottom: 1px solid black;
+    }
+    
+    .turno_celda>div:last-child{
+        border-top: 1px solid black;
+    }
+    
+    .turno_seleccionado{
+        background-color: lightsalmon;
+    }
+    
+    tr.summary_row{
+        background-color: lightgray;
+        font-weight: bold;
+    }
+    
+    tr.summary_row td{
+        padding: 1rem 0.01rem;
+    }
+
+    
+}
+
+
+

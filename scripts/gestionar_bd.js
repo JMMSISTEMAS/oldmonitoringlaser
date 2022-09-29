@@ -1,0 +1,3 @@
+function generic_sql(){
+    
+}

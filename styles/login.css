@@ -1,0 +1,27 @@
+body{
+    background-color: #f8f9fd;
+}
+
+form{
+    max-width: 600px;
+    padding: 2rem;
+    margin: auto;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px 3px rgba(237,228,237,1);
+    margin-top: 2rem;
+}
+
+h1{
+    text-align: center;
+}
+
+button[type="submit"]{
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.datos_incorrectos{
+    padding: 0.3rem;
+    display: none;
+}
